@@ -1,7 +1,6 @@
-# Characterizing Refactoring-Inducing Pull Requests
+# A qualitative study on refactorings induced by code review
 
-*This thesis has supervised by Prof. [Tiago Massoni](https://github.com/tiagomassoni) and Prof. Everton Alves (Federal University of Campina Grande, Brazil) in collaboration with Prof. [Nikolaos Tsantalis](https://github.com/tsantalis) (Concordia University, Canada)<br>*
-
+[Working in progress]
 
 ## Reproduction kit
 
