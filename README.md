@@ -13,11 +13,14 @@ You can also go along the links to get access to our data and results.
 
 ### *Mining of Refactoring Edits and Code Review Data*
 
+We previously mined code review and refactoring data guided by this design.
+
 ![Data Mining Design](./images/mining_design.png)
 
+<br>
+ 
 > #### Another paper using these mined data
-> *F. Coelho, N. Tsantalis, T. Massoni, and Everton L. G. Alves. 2021. An Empirical Study on Refactoring-Inducing Pull Requests. In Proceedings of the 15th ACM/IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM) (ESEM '21). Virtual. Article 9, 1–12. [https://doi.org/10.1145/3475716.3475785](https://doi.org/10.1145/3475716.3475785)*
-
+> *F. Coelho, N. Tsantalis, T. Massoni, and Everton L. G. Alves. 2021. An Empirical Study on Refactoring-Inducing Pull Requests. In Proceedings of the 15th ACM/IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM '21). Virtual. Article 9, 1–12. [https://doi.org/10.1145/3475716.3475785](https://doi.org/10.1145/3475716.3475785)*
 
 <br>
 
