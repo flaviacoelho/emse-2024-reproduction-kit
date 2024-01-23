@@ -7,6 +7,7 @@ You can also go along the links to get access to our data and results.
 
 This study considers the [code review and refactoring data](https://github.com/flaviacoelho/thesis-reproduction-kit/tree/master?tab=readme-ov-file#Mining-of-Refactoring-Edits-and-Code-Review-Data) previously mined from GitHub.
 
+#### Qualitative study design
 ![StudyTwoDesign](./images/study_two_design.jpg)
 
 #### *Research questions*
