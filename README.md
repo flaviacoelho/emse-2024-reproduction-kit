@@ -1,6 +1,6 @@
 # A qualitative study on refactorings induced by code review
 
-## Reproduction kit
+## Reproduction kit [Working in progress]
 
 Following, we provide the instructions for reproducing our qualitative study on [Apache](https://github.com/apache)'s Java repositories in line with the design and research questions below.
 You can also go along the links to get access to our data and results.
