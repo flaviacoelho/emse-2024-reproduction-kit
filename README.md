@@ -10,12 +10,14 @@ You can also go along the links to get access to our data and results.
   * [Characterizing code review in refactoring-inducing pull requests](#Characterizing-Code-Review-in-Refactoring-Inducing-Pull-Requests)    
 
 ---
-[Working in progress]
 
 ### *Mining of Refactoring Edits and Code Review Data*
 
-![Data Mining Design](./images/mining_design.png)
+##### Paper using these mined data
+<sub>F. Coelho, N. Tsantalis, T. Massoni, and Everton L. G. Alves. 2021. An Empirical Study on Refactoring-Inducing Pull Requests. In Proceedings of the 15th ACM/IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM) (ESEM '21). Virtual. Article 9, 1–12. [https://doi.org/10.1145/3475716.3475785](https://doi.org/10.1145/3475716.3475785)<\sub>
 
+
+![Data Mining Design](./images/mining_design.png)
 
 #### Step 1. Mining of raw pull requests data
 1. Search for Apache's non-archived Java repositories in [GitHub](https://github.com/search), by inputting *"user:apache language:java archived:false"* `We performed this search in August 2019`
@@ -38,7 +40,7 @@ The recovery of squashed commits from GitHub was built in lines 33-45, 126-130, 
       * [./results/](data-mining-design/step-2/results) stores the following datasets:
          * [output_refactorings_at_apache_commits_level.csv](data-mining-design/step-2/results/output_refactorings_at_apache_commits_level.zip)
          * [output_refactorings_at_apache_prs_level.csv](data-mining-design/step-2/results/output_refactorings_at_apache_prs_level.zip)
-      * The output datasets comprise these variables: repository's name, pull request number, commit(s) SHA, refactoring type(s), refactoring detail(s), and level; for example, (*apache/flink, 9595, 886419f12f60df803c9d757e381f201920a8061a, Rename Variable, table:Table to src:Table in method public testPartitionPrunning():void in class org.apache.flink.connectors.hive.HiveTableSourceTest, commit*). Level is a flag indicating the RefactoringMiner running level, that is, either commit level for squashed and merged pull requests or pull request level for non-squashed and merged pull requests.
+      * The output datasets comprise these variables: repository's name, pull request number, commit(s) SHA, refactoring type(s), refactoring detail(s), and level; for example, (*apache/flink, 9595, 886419f12f60df803c9d757e381f201920a8061a, Rename Variable, table:Table to src:Table in method public testPartitionPrunning():void in class org.apache.flink.connectors.hive.HiveTableSourceTest, commit*). Level is a flag indicating the RefactoringMiner running level, that is, either the commit level for squashed and merged pull requests or the pull request level for non-squashed and merged pull requests.
    * Utils:
       * A Python script ([filesConcat](data-mining-design/step-2/filesConcat.py)) for concatenating the output datasets, resulting in *detected refactorings dataset* - [output_refactorings_at_apache.csv](data-mining-design/step-2/results/output_refactorings_at_apache.zip)
 
@@ -73,14 +75,13 @@ The recovery of squashed commits from GitHub was built in lines 33-45, 126-130, 
       * A Python script ([githubMinerAuthoredData](data-mining-design/step-3/githubMinerAuthoredData.py)) for marking the initial commits in the complete refactorings dataset, resulting in [output_final_refactorings_at_apache.csv](data-mining-design/step-3/results/output_final_refactorings_at_apache.zip)
       * A Python script ([githubMinerCommitsData](data-mining-design/step-3/githubMinerCommitsData.py)) for mining the number of file changes, line additions, and line deletions in subsequent commits of our sample, resulting in an updated *code review dataset* [output_reviewing_at_apache.csv](data-mining-design/step-3/output/output_reviewing_at_apache.csv)
       * A Python script ([githubMinerParentsData](data-mining-design/step-3/githubMinerParentsData.py)) for mining the number of parents in subsequent commits of our sample, resulting in an updated *code review dataset* [output_reviewing_at_apache.csv](data-mining-design/step-3/output/output_reviewing_at_apache.csv)
-      * A Python script ([githubMinerCheckingRebase](data-mining-design/step-3/githubMinerCheckingRebase.py)) for searching for commit merge in subsequents commits of our sample, resulting in an updated *code review dataset* [output_reviewing_at_apache.csv](data-mining-design/step-3/output/output_reviewing_at_apache.csv)
+      * A Python script ([githubMinerCheckingRebase](data-mining-design/step-3/githubMinerCheckingRebase.py)) for searching for commit merge in subsequent commits of our sample, resulting in an updated *code review dataset* [output_reviewing_at_apache.csv](data-mining-design/step-3/output/output_reviewing_at_apache.csv)
       
-`After, we performed a manual inspection of pull requests searching for rebasing. Accordingly, the code review dataset consists of pull requests that did not suffer rebase, merged by either merge pull request or squash and merge option.`
-
-##### Paper using these mined data
-F. Coelho, N. Tsantalis, T. Massoni, and Everton L. G. Alves. 2021. An Empirical Study on Refactoring-Inducing Pull Requests. In Proceedings of the 15th ACM/IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM) (ESEM '21). Virtual. Article 9, 1–12. [https://doi.org/10.1145/3475716.3475785](https://doi.org/10.1145/3475716.3475785)
+`After, we manually inspected pull requests, searching for rebasing. Accordingly, the code review dataset consists of pull requests that did not suffer rebase, merged by either merge pull request or squash and merge option.`
 
 ---
+
+[Working in progress]
 
 ### *Comparing Refactoring-Inducing and non-Refactoring-Inducing Pull Requests*
 
