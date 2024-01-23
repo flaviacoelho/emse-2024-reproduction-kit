@@ -55,7 +55,7 @@ The worksheets have the following fields.
 * Subjective judgment in line with the worksheet of each round  
   * Output: 
       * Merging worksheet for each round [sample-number/final_number-of-round_spreadsheet.csv](study-two/output/)
-      * Comments from 3 analysts in each round [sample-number/number-of-round_comments.pdf](study-two/output/)
+      * Comments from 3 researchers in each round [sample-number/number-of-round_comments.pdf](study-two/output/)
 
 * Utils:
   * Python script ([summary-qualitative](study-two/summary_qualitative.py)) for summarizing the rounds of the qualitative analysis
