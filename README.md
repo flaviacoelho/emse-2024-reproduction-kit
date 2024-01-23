@@ -1,19 +1,16 @@
 # A qualitative study on refactorings induced by code review
 
-[Working in progress]
-
 ## Reproduction kit
 
-Following, we provide the instructions for reproducing our empirical study on [Apache](https://github.com/apache)'s Java repositories in line with the research questions and design below.
-You can also go along the links to get access to our data and results!
+Following, we provide the instructions for reproducing our qualitative study on [Apache](https://github.com/apache)'s Java repositories in line with the research questions and design below.
+You can also go along the links to get access to our data and results.
 
 ---
   * [Mining of refactoring edits and code review data](#Mining-of-Refactoring-Edits-and-Code-Review-Data) 
-  * [Comparing refactoring-inducing and non-refactoring-inducing pull requests](#Comparing-Refactoring-Inducing-and-non-Refactoring-Inducing-Pull-Requests)
-  * [Characterizing code review in refactoring-inducing pull requests](#Characterizing-Code-Review-in-Refactoring-Inducing-Pull-Requests)
-  * [Characterizing refactoring edits in refactoring-inducing pull requests](#Characterizing-Refactoring-Edits-in-Refactoring-Inducing-Pull-Requests)
+  * [Characterizing code review in refactoring-inducing pull requests](#Characterizing-Code-Review-in-Refactoring-Inducing-Pull-Requests)    
 
 ---
+[Working in progress]
 
 ### *Mining of Refactoring Edits and Code Review Data*
 
