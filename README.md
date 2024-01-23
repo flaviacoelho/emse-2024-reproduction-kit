@@ -77,6 +77,9 @@ The recovery of squashed commits from GitHub was built in lines 33-45, 126-130, 
       
 `After, we performed a manual inspection of pull requests searching for rebasing. Accordingly, the code review dataset consists of pull requests that did not suffer rebase, merged by either merge pull request or squash and merge option.`
 
+##### Paper using these mined data
+F. Coelho, N. Tsantalis, T. Massoni, and Everton L. G. Alves. 2021. An Empirical Study on Refactoring-Inducing Pull Requests. In Proceedings of the 15th ACM/IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM) (ESEM '21). Virtual. Article 9, 1–12. [https://doi.org/10.1145/3475716.3475785](https://doi.org/10.1145/3475716.3475785)
+
 ---
 
 ### *Comparing Refactoring-Inducing and non-Refactoring-Inducing Pull Requests*
