@@ -29,7 +29,7 @@ refactorings in refactoring-inducing pull requests?
 * Run the Python script [pre-qualitative-analysis](study-two/pre-qualitative-analysis.py) for selecting a purposive data for each round of analysis
   * Input was preset as *refactoring dataset* (Mining of refactoring edis and code review data, Step 2) - available in [./input](study-two/input)
   * Output: 
-      * A worksheet for each round [sample-number/sample_number-of-round_spreadsheet.csv](study-two/output/)
+      * A worksheet for each round 
    
 | Round | Worksheet                                                                      |                  
 |-------|--------------------------------------------------------------------------------|
