@@ -31,14 +31,18 @@ refactorings in refactoring-inducing pull requests?
 
 * Run the Python script [pre-qualitative-analysis](study-two/pre-qualitative-analysis.py) for selecting a purposive data for each round of analysis
 
-| Sample | Number of refactoring-inducing PRs | Number of non-refactoring-inducing PRs | Number of review comments | Number of subsequent commits | Number of refactoring edits |               
-|:------:|:----------------------------------:|:--------------------------------------:|:-------------------------:|:-------------------------:|:------------------------------:|
-| 1      | 10                                 | 10                                     | 100                       | 40                        | 66                            |
+| Sample | Main objective                | Number of refactoring-inducing PRs | Number of non-refactoring-inducing PRs | Number of review comments | Number of subsequent commits | Number of refactoring edits |               
+|:------:|:-----------------------------:|:----------------------------------:|:--------------------------------------:|:-------------------------:|:-------------------------:|:------------------------------:|
+| 1      | Investigating an initial random sample of PRs | 10                                 | 10                                     | 100                       | 40                        | 66                            |
 | 2      | 10                                 | 10                                     | 87                        | 20                        | 10                            |
 | 3      | 13                                 | 13                                     | 327                       | 126                       | 208                           |
 | 4      | 27                                 | 25                                     | 409                       | 160                       | 77                            |
 |*Total* | *60*                               | *58*                                   | *923*                     | *346*                     | *361*                         |
 
+1 & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}  \end{tabular}}\\ \hline
+    2 & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}} Checking if emerged patterns remain in refactoring-inducing PRs consisting\\ of only one refactoring \end{tabular}}\\ \hline
+    3 & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}  Exploring if emerged patterns persist in refactoring-inducing PRs consisting\\ of high-level refactorings\end{tabular}}\\ \hline
+    4 & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}  Inspecting if emerged patterns continue regardless of the sequence of\\ refactoring edits\end{tabular}}\\ \hline
      
   * Input was preset as *refactoring dataset* (Mining of refactoring edis and code review data, Step 2) - available in [./input](study-two/input)
   * Output: 
