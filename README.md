@@ -54,8 +54,9 @@ The worksheets have the following fields.
 ### Data analysis
 * Subjective judgment in line with the worksheet of each round  
   * Output:
+  
 | Round | Merging worksheet                           | Comments from three researchers              |
-|-------|---------------------------------------------|----------------------------------------------|
+|-------|--------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
 | 1     | [final-sample-1-spreadsheet.csv](study-two/output/sample1/final_sample_1_spreadsheet.csv)  | [sample-1-comments.pdf](study-two/output/sample1/sample_1_comments.pdf)  |
 
 * Utils:
