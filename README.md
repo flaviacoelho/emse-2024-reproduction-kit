@@ -37,7 +37,7 @@ refactorings in refactoring-inducing pull requests?
 | 2      | 10                                 | 10                                     | 87                        | 20                        | 10                            |
 | 3      | 13                                 | 13                                     | 327                       | 126                       | 208                           |
 | 4      | 27                                 | 25                                     | 409                       | 160                       | 77                            |
-|*Total* | 60                                 | 58                                     | 923                       | 346                       | 361                           |
+|*Total* | *60*                               | *58*                                   | *923*                     | *346*                     | *361*                         |
 
      
   * Input was preset as *refactoring dataset* (Mining of refactoring edis and code review data, Step 2) - available in [./input](study-two/input)
