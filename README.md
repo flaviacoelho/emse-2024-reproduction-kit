@@ -32,7 +32,7 @@ refactorings in refactoring-inducing pull requests?
 * Run the Python script [pre-qualitative-analysis](study-two/pre-qualitative-analysis.py) for selecting a purposive data for each round of analysis
 
 | Sample | Number of refactoring-inducing PRs | Number of non-refactoring-inducing PRs | Number of review comments | Number of subsequent commits | Number of refactoring edits |               
-|:------:|:----------------------------------:|:--------------------------------------:|:-------------------------:|:-------------------------:|:-------------------------------|
+|:------:|:----------------------------------:|:--------------------------------------:|:-------------------------:|:-------------------------:|:------------------------------:|
 | 1      | 10                                 | 10                                     | 100                       | 40                        | 66                            |
 | 2      | 10                                 | 10                                     | 87                        | 20                        | 10                            |
 | 3      | 13                                 | 13                                     | 327                       | 126                       | 208                           |
