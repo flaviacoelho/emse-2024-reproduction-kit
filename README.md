@@ -30,6 +30,13 @@ refactorings in refactoring-inducing pull requests?
   * Input was preset as *refactoring dataset* (Mining of refactoring edis and code review data, Step 2) - available in [./input](study-two/input)
   * Output: 
       * A worksheet for each round [sample-number/sample_number-of-round_spreadsheet.csv](study-two/output/)
+   
+| Round | Worksheet                                                                      |                  
+|-------|--------------------------------------------------------------------------------|
+| 1     | [sample-1-spreadsheet.csv](study-two/output/sample1/sample_1_spreadsheet.csv)  | 
+| 2     | [sample-2-spreadsheet.csv](study-two/output/sample2/sample_2_spreadsheet.csv)  | 
+| 3     | [sample-3-spreadsheet.csv](study-two/output/sample3/sample_3_spreadsheet.csv)  | 
+| 4     | [sample-4-spreadsheet.csv](study-two/output/sample4/sample_4_spreadsheet.csv)  | 
 
 The worksheets have the following fields.
  
