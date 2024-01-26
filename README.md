@@ -26,6 +26,9 @@ You can also go along the links to get access to our data and results.
 refactorings in refactoring-inducing pull requests? 
 
 ### Purposive sampling
+
+*Note. We adopted purposive sampling to select refactoring-inducing and non-refactoring-inducing PRs. We followed that sampling strategy until we reached data saturation, achieved after four rounds of analysis.*
+
 * Run the Python script [pre-qualitative-analysis](study-two/pre-qualitative-analysis.py) for selecting a purposive data for each round of analysis
   * Input was preset as *refactoring dataset* (Mining of refactoring edis and code review data, Step 2) - available in [./input](study-two/input)
   * Output: 
