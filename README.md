@@ -37,7 +37,7 @@ refactorings in refactoring-inducing pull requests?
 | 2 | Checking if emerged patterns remain in refactoring-inducing PRs consisting of only one refactoring | 10 | 10 | 87 | 20 | 10 |
 | 3 | Exploring if emerged patterns persist in refactoring-inducing PRs consisting of high-level refactorings | 13 | 13 | 327 | 126 | 208 |
 | 4 | Inspecting if emerged patterns continue regardless of the sequence of refactoring edits | 27 | 25 | 409 | 160 | 77 |
-| > | *Total* | *60* | *58* | *923* | *346* | *361* |
+|| *Total* | *60* | *58* | *923* | *346* | *361* |
      
   * Input was preset as *refactoring dataset* (Mining of refactoring edis and code review data, Step 2) - available in [./input](study-two/input)
   * Output: 
