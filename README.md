@@ -32,7 +32,7 @@ refactorings in refactoring-inducing pull requests?
       * A worksheet for each round 
    
 | Round | Worksheet                                                                      |                  
-|-------|--------------------------------------------------------------------------------|
+|:-----:|--------------------------------------------------------------------------------|
 | 1     | [sample-1-spreadsheet.csv](study-two/output/sample1/sample_1_spreadsheet.csv)  | 
 | 2     | [sample-2-spreadsheet.csv](study-two/output/sample2/sample_2_spreadsheet.csv)  | 
 | 3     | [sample-3-spreadsheet.csv](study-two/output/sample3/sample_3_spreadsheet.csv)  | 
