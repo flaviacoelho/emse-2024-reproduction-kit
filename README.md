@@ -63,7 +63,7 @@ The worksheets have the following fields.
   * Output:
   
 | Round | Merging worksheet                           | Comments from the analysts                   |
-|-------|--------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
+|:-----:|--------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
 | 1     | [final-sample-1-spreadsheet.csv](study-two/output/sample1/final_sample_1_spreadsheet.csv)  | [sample-1-comments.pdf](study-two/output/sample1/sample_1_comments.pdf)  |
 | 2     | [final-sample-2-spreadsheet.csv](study-two/output/sample2/final_sample_2_spreadsheet.csv)  | [sample-2-comments.pdf](study-two/output/sample2/sample_2_comments.pdf)  |
 | 3     | [final-sample-3-spreadsheet.csv](study-two/output/sample3/final_sample_3_spreadsheet.csv)  | [sample-3-comments.pdf](study-two/output/sample3/sample_3_comments.pdf)  |
