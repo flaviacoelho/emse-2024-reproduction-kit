@@ -30,6 +30,16 @@ refactorings in refactoring-inducing pull requests?
 *Note. We adopted purposive sampling to select refactoring-inducing and non-refactoring-inducing PRs. We followed that sampling strategy until we reached data saturation, achieved after four rounds of analysis.*
 
 * Run the Python script [pre-qualitative-analysis](study-two/pre-qualitative-analysis.py) for selecting a purposive data for each round of analysis
+
+| Sample | Number of refactoring-inducing PRs | Number of non-refactoring-inducing PRs | Number of review comments | Number of subsequent commits | Number of refactoring edits |               
+|:------:|:----------------------------------:|:--------------------------------------:|:-------------------------:|:-------------------------:|:-------------------------------|
+| 1      | 10                                 | 10                                     | 100                       | 40                        | 66                            |
+| 2      | 10                                 | 10                                     | 87                        | 20                        | 10                            |
+| 3      | 13                                 | 13                                     | 327                       | 126                       | 208                           |
+| 4      | 27                                 | 25                                     | 409                       | 160                       | 77                            |
+|*Total* | 60                                 | 58                                     | 923                       | 346                       | 361                           |
+
+     
   * Input was preset as *refactoring dataset* (Mining of refactoring edis and code review data, Step 2) - available in [./input](study-two/input)
   * Output: 
       * A worksheet for each round 
