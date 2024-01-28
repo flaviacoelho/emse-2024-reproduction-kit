@@ -83,4 +83,6 @@ The worksheets have the following fields.
 | 4     | [final-sample-4-spreadsheet.csv](study-two/output/sample4/final_sample_4_spreadsheet.csv)  | [sample-4-comments.pdf](study-two/output/sample4/sample_4_comments.pdf)  |
 
 * Utils:
-  * Python script ([summary-qualitative](study-two/summary_qualitative.py)) for summarizing the rounds of the qualitative analysis
+  * Python script ([summary-qualitative](study-two/output/summary_qualitative.py)) for summarizing the rounds of the qualitative analysis
+  * Python script ([statistical-testing](study-two/output/statistical_test.py)) for running statistical tests on authors' and reviewers' experience 
+
