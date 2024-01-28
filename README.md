@@ -84,5 +84,5 @@ The worksheets have the following fields.
 
 * Utils:
   * Python script ([summary-qualitative](study-two/output/summary_qualitative.py)) for summarizing the rounds of the qualitative analysis
-  * Python script ([statistical-testing](study-two/output/statistical_test.py)) for running statistical tests on authors' and reviewers' experience 
+  * Python script ([statistical-test](study-two/output/statistical_test.py)) for running statistical tests on authors' and reviewers' experience 
 
