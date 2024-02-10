@@ -11,18 +11,63 @@ Created on Jan 27 22:19:57 2024
 from scipy.stats import shapiro,levene,mannwhitneyu
 import pandas as pd, numpy as np
 import pingouin as pg
+import matplotlib.pyplot as plt
+
 
 np.set_printoptions(formatter={'float': lambda x: '%.2f' % x})
+plt.style.use('ggplot')
+
+def bootstrap_ci_median(df, variable, classes, repetitions=1000, alpha=0.05, random_state=None):
+    df = df[[variable, classes]]
+    bootstrap_sample_size = len(df)
+
+    median_diffs = []
+    for i in range(repetitions):
+        bootstrap_sample = df.sample(n=bootstrap_sample_size, replace=True, random_state=random_state)
+        median_diff = bootstrap_sample.groupby(classes).median().iloc[1, 0] - \
+                      bootstrap_sample.groupby(classes).median().iloc[0, 0]
+        median_diffs.append(median_diff)
+
+    # confidence interval
+    left = np.percentile(median_diffs, alpha / 2 * 100)
+    right = np.percentile(median_diffs, 100 - alpha / 2 * 100)
+
+    # point estimate
+    point_est = df.groupby(classes).median().iloc[1, 0] - df.groupby(classes).median().iloc[0, 0]
+    print('\nPoint estimate of difference between medians:', round(point_est, 2))
+    print((1 - alpha) * 100, '%', 'confidence interval for the difference between medians:',
+          (round(left, 2), round(right, 2)))
+    return
+
+def bootstrap_ci_mean(df, variable, classes, repetitions=1000, alpha=0.05, random_state=None):
+    df = df[[variable, classes]]
+    bootstrap_sample_size = len(df)
+
+    mean_diffs = []
+    for i in range(repetitions):
+        bootstrap_sample = df.sample(n=bootstrap_sample_size, replace=True, random_state=random_state)
+        mean_diff = bootstrap_sample.groupby(classes).mean().iloc[1, 0] - bootstrap_sample.groupby(classes).mean().iloc[
+            0, 0]
+        mean_diffs.append(mean_diff)
+
+    # confidence interval
+    left = np.percentile(mean_diffs, alpha / 2 * 100)
+    right = np.percentile(mean_diffs, 100 - alpha / 2 * 100)
+
+    # point estimate
+    point_est = df.groupby(classes).mean().iloc[1, 0] - df.groupby(classes).mean().iloc[0, 0]
+    print('\nPoint estimate of difference between means:', round(point_est, 2))
+    print((1 - alpha) * 100, '%', 'confidence interval for the difference between means:',
+          (round(left, 2), round(right, 2)))
+    return
 
 def run_test(data, developer):
     data_ripr = data.loc[data['category'] == "refactoring-inducing"]
     data_ripr_developer = data_ripr.loc[:, developer]
-    print(data_ripr_developer)
     # plt.hist(data_ripr_authors, color='lightgreen', ec='black', bins=15)
 
     data_nonripr = data.loc[data['category'] == "non-refactoring-inducing"]
     data_nonripr_developer = data_nonripr.loc[:, developer]
-    print(data_nonripr_developer)
 
     # Checking for normalility
     # Shapiro-Wilk Test value > 0.05, then data is normal
@@ -35,10 +80,20 @@ def run_test(data, developer):
     print('\nChecking for homogeneity of variances PRs (> 0.05, homogeneity of variance is met)')
     print('Levene test:', levene(data_ripr_developer, data_nonripr_developer))
 
-    print('\nMann Whitney U test (< 0.05, there is enough evidence that group1 > group2):', mannwhitneyu(data_ripr_developer,data_nonripr_developer, alternative='greater'))
+    bootstrap_ci_median(data, developer, 'category')
+    bootstrap_ci_mean(data, developer, 'category')
+
+    #authors vs authors
+    print('\nMann Whitney U test (< 0.05, there is enough evidence that group1 < group2):',
+          mannwhitneyu(data_ripr_developer, data_nonripr_developer, alternative='less'))
+    #reviewers vs reviewers
+    print('\nMann Whitney U test (< 0.05, there is enough evidence that group1 > group2):',
+          mannwhitneyu(data_ripr_developer,data_nonripr_developer, alternative='greater'))
 
     print('\nMann-Whitney U test')
-    print(mannwhitneyu(data_ripr_developer, data_nonripr_developer, alternative='two-sided'))
+    print(mannwhitneyu(data_ripr_developer, data_nonripr_developer, alternative='less'))
+
+    print('Mann Whitney U test: (pingouin)', pg.mwu(data_ripr_developer, data_nonripr_developer, alternative='less'))
 
     stat, p_value = mannwhitneyu(data_ripr_developer, data_nonripr_developer)
     print('Statistics=%.2f, p=%.2f' % (stat, p_value))
@@ -50,7 +105,6 @@ def run_test(data, developer):
     else:
         print('Conclusion: Do not Reject Null Hypothesis (No significant difference between two samples)')
 
-    print('\nEffect size by CLES:',pg.compute_effsize(data_ripr_developer, data_nonripr_developer, paired=False, eftype='CLES'))
     return
 
 
@@ -66,6 +120,8 @@ def run_test_versus(data_a, data_r):
 
     data_r_ripr = data_r.loc[data_r['category'] == "refactoring-inducing"]
     data_r_ripr_reviewer = data_r_ripr.loc[:, 'reviewer']
+    # plt.hist(data_r_ripr_reviewer, bins=10)
+    # plt.show()
 
     # Checking for normalility
     # Shapiro-Wilk Test value > 0.05, then data is normal
@@ -79,8 +135,9 @@ def run_test_versus(data_a, data_r):
     print('Levene test:', levene(data_a_ripr_author, data_r_ripr_reviewer))
 
     print('\nMann-Whitney U test')
-    print(mannwhitneyu(data_a_ripr_author, data_r_ripr_reviewer, alternative='two-sided'))
-    stat, p_value = mannwhitneyu(data_a_ripr_author, data_r_ripr_reviewer)
+    print(mannwhitneyu(data_a_ripr_author, data_r_ripr_reviewer, alternative='less'))
+
+    stat, p_value = mannwhitneyu(data_a_ripr_author, data_r_ripr_reviewer, alternative='less')
     print('Statistics=%.2f, p=%.2f' % (stat, p_value))
 
     # conclusion
@@ -89,9 +146,6 @@ def run_test_versus(data_a, data_r):
     else:
         print('Conclusion: Do not Reject Null Hypothesis (No significant difference between two samples)')
 
-    print('\nMann Whitney U test (< 0.05, there is enough evidence that reviewer in ripr > author in ripr):', mannwhitneyu(data_r_ripr_reviewer,data_a_ripr_author, alternative='greater'))
-
-    print('\nEffect size by CLES:', pg.compute_effsize(data_a_ripr_author, data_r_ripr_reviewer, paired=False, eftype='CLES'))
 
     # non-refactoring-inducing PRs
     print('\nAnalyzing non-refactoring-inducing PRs')
@@ -113,8 +167,9 @@ def run_test_versus(data_a, data_r):
     print('Levene test:', levene(data_a_nonripr_author, data_r_nonripr_reviewer))
 
     print('\nMann-Whitney U test')
-    print(mannwhitneyu(data_a_nonripr_author, data_r_nonripr_reviewer, alternative='two-sided'))
-    stat, p_value = mannwhitneyu(data_a_nonripr_author, data_r_nonripr_reviewer)
+    print(mannwhitneyu(data_a_nonripr_author, data_r_nonripr_reviewer, alternative='greater'))
+
+    stat, p_value = mannwhitneyu(data_a_nonripr_author, data_r_nonripr_reviewer, alternative='greater')
     print('Statistics=%.2f, p=%.2f' % (stat, p_value))
 
     # conclusion
@@ -122,10 +177,6 @@ def run_test_versus(data_a, data_r):
         print('Conclusion: Reject Null Hypothesis (Significant difference between two samples)')
     else:
         print('Conclusion: Do not Reject Null Hypothesis (No significant difference between two samples)')
-
-    print('\nMann Whitney U test (< 0.05, there is statistical evidence that in reviewer non-ripr > author in non-ripr):',mannwhitneyu(data_r_nonripr_reviewer,data_a_nonripr_author, alternative='greater'))
-
-    print('\nEffect size by CLES:',pg.compute_effsize(data_a_nonripr_author, data_r_nonripr_reviewer, paired=False, eftype='CLES'))
 
     return
 
