@@ -5,7 +5,7 @@
 Following, we provide the instructions for reproducing our qualitative study on [Apache](https://github.com/apache)'s Java repositories in line with the design and research questions below.
 You can also go along the links to get access to our data and results.
 
-* **Note.** This study considers the [code review and refactoring data](https://github.com/flaviacoelho/thesis-reproduction-kit/tree/master?tab=readme-ov-file#Mining-of-Refactoring-Edits-and-Code-Review-Data) previously mined from GitHub.*
+* Note. This study considers the [code review and refactoring data](https://github.com/flaviacoelho/thesis-reproduction-kit/tree/master?tab=readme-ov-file#Mining-of-Refactoring-Edits-and-Code-Review-Data) previously mined from GitHub.*
 
 ---
   * [Qualitative study design](#Qualitative-study-design)
