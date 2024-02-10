@@ -5,7 +5,7 @@
 Following, we provide the instructions for reproducing our qualitative study on [Apache](https://github.com/apache)'s Java repositories in line with the design and research questions below.
 You can also go along the links to get access to our data and results.
 
-*Note. This study considers the [code review and refactoring data](https://github.com/flaviacoelho/thesis-reproduction-kit/tree/master?tab=readme-ov-file#Mining-of-Refactoring-Edits-and-Code-Review-Data) previously mined from GitHub.*
+***Note.** This study considers the [code review and refactoring data](https://github.com/flaviacoelho/thesis-reproduction-kit/tree/master?tab=readme-ov-file#Mining-of-Refactoring-Edits-and-Code-Review-Data) previously mined from GitHub.*
 
 ---
   * [Qualitative study design](#Qualitative-study-design)
@@ -27,7 +27,7 @@ refactorings in refactoring-inducing pull requests?
 
 ### Purposive sampling
 
-* **Note.** We adopted purposive sampling to select refactoring-inducing and non-refactoring-inducing PRs. We followed that sampling strategy until we reached data saturation, achieved after four rounds of analysis.*
+***Note.** We adopted purposive sampling to select refactoring-inducing and non-refactoring-inducing PRs. We followed that sampling strategy until we reached data saturation, achieved after four rounds of analysis.*
 
 * Run the Python script [pre-qualitative-analysis](study-two/pre-qualitative-analysis.py) for selecting a purposive data for each round of analysis
 
