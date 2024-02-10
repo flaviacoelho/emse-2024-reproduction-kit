@@ -40,7 +40,7 @@ refactorings in refactoring-inducing pull requests?
 || *Total* | *60* | *58* | *923* | *346* | *361* |
      
   * Input was preset as *refactoring dataset* (Mining of refactoring edis and code review data, Step 2) - available in [./input](study-two/input)
-    `Attention. This zip file should be extracted first, before running the script.`
+    *` Attention. This zip file should be extracted first, before running the script.`*
   * Output: 
       * A worksheet for each round 
    
